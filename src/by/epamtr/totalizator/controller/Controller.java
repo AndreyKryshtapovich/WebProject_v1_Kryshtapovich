@@ -18,7 +18,7 @@ public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String COMMAND_NAME = "command";
 	private final CommandProvider provider = new CommandProvider();
-	private final static Logger rootLogger = LogManager.getRootLogger();
+	private final static Logger rootLogger = LogManager.getRootLogger();// зачем берешь root-логгер? потом же настраивать логгинг станет невозможно
 
 	public Controller() {
 		super();
@@ -39,7 +39,7 @@ public class Controller extends HttpServlet {
 		try {
 			command.execute(request, response);
 		} catch (CommandException e) {
-			rootLogger.error(e.getMessage());
+			rootLogger.error(e.getMessage());// все исключение логгируй, а не только сообщение
 			page = PageName.ERROR_PAGE; // might be fatal eror or some other
 										// page
 		}

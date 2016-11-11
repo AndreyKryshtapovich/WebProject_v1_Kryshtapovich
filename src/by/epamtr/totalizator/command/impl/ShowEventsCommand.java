@@ -42,7 +42,7 @@ public class ShowEventsCommand implements Command {
 		}
 
 		JSPListBean jsp = new JSPListBean(eventsList);
-		request.setAttribute("list", jsp);
+		request.setAttribute("list", jsp);// именуем атрибуты
 		page = PageName.USER_PAGE;
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);

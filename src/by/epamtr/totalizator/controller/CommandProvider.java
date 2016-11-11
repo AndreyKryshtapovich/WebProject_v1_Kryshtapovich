@@ -14,7 +14,7 @@ import by.epamtr.totalizator.command.impl.UnknownCommand;
 public class CommandProvider {
 	private Map<CommandName, Command> commands = new HashMap<CommandName, Command>();
 
-	CommandProvider() {
+	CommandProvider() {// public-класс, friendly-конструктор - зачем?
 		commands.put(CommandName.SIGN_IN, new SignInCommand());
 		commands.put(CommandName.GO_TO_REGISTRATION, new GoToRegistrationCommand());
 		commands.put(CommandName.REGISTRATION_USER, new RegistrationUserCommand());
@@ -30,7 +30,7 @@ public class CommandProvider {
 		CommandName key = CommandName.UNKNOWN;
 
 		commandName = commandName.replace("-", "_").toUpperCase();
-		CommandName[] names = CommandName.values();
+		CommandName[] names = CommandName.values();// так, это что ты такое тут реализуешь? метод valueOf тебе чем не угодил?
 		for (CommandName c : names) {
 			if (commandName.equals(c.toString())) {
 				key = CommandName.valueOf(commandName);
