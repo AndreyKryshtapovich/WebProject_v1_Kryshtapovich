@@ -24,6 +24,7 @@ public class ClientOperation implements ClientOperationService {
 		}
 
 
+		// может, напишем какой-нибудь builder для построения такого юзера
 		User user = new User();
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
